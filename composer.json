@@ -1,0 +1,19 @@
+{
+    "name": "qlimix/environment",
+    "type": "package",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "frank",
+            "email": "frank@qlimix.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Qlimix\\Environment\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
