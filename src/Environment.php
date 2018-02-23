@@ -19,7 +19,7 @@ final class Environment
     /**
      * @return Environment
      */
-    public function createDevelopment(): Environment
+    public static function createDevelopment(): Environment
     {
         return new self(self::DEVELOPMENT);
     }
@@ -27,7 +27,7 @@ final class Environment
     /**
      * @return Environment
      */
-    public function createProduction(): Environment
+    public static function createProduction(): Environment
     {
         return new self(self::PRODUCTION);
     }
