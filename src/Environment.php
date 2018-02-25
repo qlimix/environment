@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace Qlimix\Environment\Environment;
+
 final class Environment
 {
     private const PRODUCTION = 'prod';
