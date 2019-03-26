@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Qlimix\Environment\Values;
+namespace Qlimix\Environment\Value;
 
-use Qlimix\Environment\Values\Exception\LoaderException;
+use Qlimix\Environment\Value\Exception\LoaderException;
 use function explode;
 use function in_array;
 use function is_numeric;

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Qlimix\Environment\Values\Exception;
+namespace Qlimix\Environment\Value\Exception;
 
 use Exception;
 
