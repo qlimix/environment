@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Qlimix\Environment;
+namespace Qlimix\Environment\Values;
 
 use Qlimix\Environment\Values\Exception\LoaderException;
 use function explode;
