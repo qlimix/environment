@@ -3,6 +3,10 @@
 namespace Qlimix\Environment;
 
 use Qlimix\Environment\Values\Exception\LoaderException;
+use function explode;
+use function in_array;
+use function is_numeric;
+use function getenv;
 
 final class Loader
 {
