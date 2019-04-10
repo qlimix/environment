@@ -2,3 +2,4 @@
 /vendor/
 .env
 !.gitkeep
+.phpunit.result.cache

@@ -4,14 +4,14 @@ namespace Qlimix\Environment\Value;
 
 use Qlimix\Environment\Value\Exception\LoaderException;
 use function explode;
+use function getenv;
 use function in_array;
 use function is_numeric;
-use function getenv;
 
-final class Loader
+final class Loader implements LoaderInterface
 {
     /**
-     * @throws LoaderException
+     * @inheritDoc
      */
     public function getString(string $name): string
     {
@@ -19,7 +19,7 @@ final class Loader
     }
 
     /**
-     * @throws LoaderException
+     * @inheritDoc
      */
     public function getInt(string $name): int
     {
@@ -32,7 +32,7 @@ final class Loader
     }
 
     /**
-     * @throws LoaderException
+     * @inheritDoc
      */
     public function getFloat(string $name): float
     {
@@ -45,7 +45,7 @@ final class Loader
     }
 
     /**
-     * @throws LoaderException
+     * @inheritDoc
      */
     public function getBoolean(string $name): bool
     {
@@ -66,17 +66,21 @@ final class Loader
     }
 
     /**
-     * @throws LoaderException
+     * @inheritDoc
      */
     public function getArray(string $name, string $delimiter): array
     {
-        return explode($delimiter, $this->getEnv($name));
+        $exploded = explode($delimiter, $this->getEnv($name));
+
+        if ($exploded === false) {
+            throw new LoaderException('Failed to get array');
+        }
+
+        return $exploded;
     }
 
     /**
-     * @return mixed
-     *
-     * @throws LoaderException
+     * @inheritDoc
      */
     public function getMapped(string $name, callable $map)
     {
@@ -84,7 +88,7 @@ final class Loader
     }
 
     /**
-     * @throws LoaderException
+     * @inheritDoc
      */
     private function getEnv(string $name): string
     {
