@@ -1,7 +1,14 @@
 {
     "name": "qlimix/environment",
     "type": "package",
-    "license": "mit",
+    "description": "Environment utilities",
+    "license": "MIT",
+    "keywords": [
+        "qlimix",
+        "environment",
+        "env",
+        "value"
+    ],
     "authors": [
         {
             "name": "frank",
@@ -21,19 +28,7 @@
     "config": {
         "sort-packages": true
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@bitbucket.org:qlimix/code-standard.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@bitbucket.org:qlimix/codesniffer-standard.git"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require-dev": {
-        "qlimix/code-standard": "dev-master"
+        "qlimix/code-standard": "^1.0"
     }
 }

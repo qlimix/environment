@@ -1,0 +1,22 @@
+language: php
+
+php:
+  - 7.2
+  - 7.3
+  - nightly
+
+matrix:
+  allow_failures:
+    - nightly
+
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer update --no-interaction
+
+script:
+  - vendor/bin/grumphp run
+  - mkdir var
+  - vendor/bin/phpunit tests --coverage-clover clover.xml
+
+after_success:
+  - travis_retry php vendor/bin/php-coveralls
