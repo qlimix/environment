@@ -11,13 +11,15 @@ Environment utilities. Loading env values through type loader.
 
 Using Composer:
 
-`composer require qlimix/environment`
+~~~
+$ composer require qlimix/environment
+~~~
 
 ## usage
 
 ### Environment object
 Create at bootstrapping based on for example an env value
-```
+```php
 <?php
 
 use Qlimix\Environment\Environment;
@@ -27,13 +29,12 @@ $env = Environment::createDevelopment();
 
 ### Environment object
 Create at bootstrapping based on for example an env value
-```
+```php
 <?php
 
 use Qlimix\Environment\Value\Loader;
 
 $env = new Loader();
-$env->load
 $string = $env->getString('value');
 $integer = $env->getInt('value');
 $float = $env->getFloat('value');
