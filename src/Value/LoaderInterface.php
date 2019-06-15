@@ -27,7 +27,7 @@ interface LoaderInterface
     public function getBoolean(string $name): bool;
 
     /**
-     * @return mixed[]
+     * @return string[]
      *
      * @throws LoaderException
      */

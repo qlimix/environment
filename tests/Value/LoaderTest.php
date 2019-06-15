@@ -41,28 +41,6 @@ final class LoaderTest extends TestCase
     /**
      * @test
      */
-    public function shouldGetFloatValue(): void
-    {
-        putenv('FOO=1.2');
-
-        $foo = $this->loader->getFloat('FOO');
-
-        $this->assertSame(1.2, $foo);
-    }
-
-    /**
-     * @test
-     */
-    public function shouldThrowOnGetFloatValue(): void
-    {
-        $this->expectException(LoaderException::class);
-
-        $this->loader->getFloat('RANDOM_XYZ');
-    }
-
-    /**
-     * @test
-     */
     public function shouldGetIntValue(): void
     {
         putenv('FOO=1');
@@ -85,6 +63,52 @@ final class LoaderTest extends TestCase
     /**
      * @test
      */
+    public function shouldThrowOnNoneNumericIntValue(): void
+    {
+        putenv('FOO=A');
+
+        $this->expectException(LoaderException::class);
+
+        $this->loader->getInt('FOO');
+    }
+
+    /**
+     * @test
+     */
+    public function shouldGetFloatValue(): void
+    {
+        putenv('FOO=1.2');
+
+        $foo = $this->loader->getFloat('FOO');
+
+        $this->assertSame(1.2, $foo);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldThrowOnGetFloatValue(): void
+    {
+        $this->expectException(LoaderException::class);
+
+        $this->loader->getFloat('RANDOM_XYZ');
+    }
+
+    /**
+     * @test
+     */
+    public function shouldThrowOnNoneNumericFloatValue(): void
+    {
+        putenv('FOO=A');
+
+        $this->expectException(LoaderException::class);
+
+        $this->loader->getFloat('FOO');
+    }
+
+    /**
+     * @test
+     */
     public function shouldGetArrayValue(): void
     {
         putenv('FOO=foo,bar,foobar');
@@ -102,6 +126,28 @@ final class LoaderTest extends TestCase
         $this->expectException(LoaderException::class);
 
         $this->loader->getArray('RANDOM_XYZ', ',');
+    }
+
+    /**
+     * @test
+     */
+    public function shouldThrowOnEmptyValue(): void
+    {
+        $this->expectException(LoaderException::class);
+
+        $this->loader->getArray('FOO', '');
+    }
+
+    /**
+     * @test
+     */
+    public function shouldThrowOnFalseExplodeValue(): void
+    {
+        putenv('FOO=,');
+
+        $this->expectException(LoaderException::class);
+
+        $this->loader->getArray('FOO', '');
     }
 
     /**
@@ -133,6 +179,18 @@ final class LoaderTest extends TestCase
         $this->expectException(LoaderException::class);
 
         $this->loader->getBoolean('RANDOM_XYZ');
+    }
+
+    /**
+     * @test
+     */
+    public function shouldThrowOnNoneBooleanValue(): void
+    {
+        putenv('FOO=A');
+
+        $this->expectException(LoaderException::class);
+
+        $this->loader->getBoolean('FOO');
     }
 
     /**

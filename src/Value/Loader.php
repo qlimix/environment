@@ -70,7 +70,7 @@ final class Loader implements LoaderInterface
      */
     public function getArray(string $name, string $delimiter): array
     {
-        $exploded = explode($delimiter, $this->getEnv($name));
+        $exploded = @explode($delimiter, $this->getEnv($name));
 
         if ($exploded === false) {
             throw new LoaderException('Failed to get array');
@@ -88,6 +88,8 @@ final class Loader implements LoaderInterface
     }
 
     /**
+     * @throws LoaderException
+     *
      * @inheritDoc
      */
     private function getEnv(string $name): string
