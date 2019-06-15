@@ -9,6 +9,9 @@
         "env",
         "value"
     ],
+    "require": {
+        "php": ">=7.2"
+    },
     "authors": [
         {
             "name": "frank",
