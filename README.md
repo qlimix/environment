@@ -1,7 +1,7 @@
 # environment
 
 [![Travis CI](https://api.travis-ci.org/qlimix/environment.svg?branch=master)](https://travis-ci.org/qlimix/environment)
-[![Coveralls](https://img.shields.io/coveralls/github/qlimix/environment.svg)](https://coveralls.io/qlimix/environment)
+[![Coveralls](https://img.shields.io/coveralls/github/qlimix/environment.svg)](https://coveralls.io/github/qlimix/environment)
 [![Packagist](https://img.shields.io/packagist/v/qlimix/environment.svg)](https://packagist.org/packages/qlimix/environment)
 [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/qlimix/environment/blob/master/LICENSE)
 

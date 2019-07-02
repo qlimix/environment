@@ -1,6 +1,6 @@
 {
     "name": "qlimix/environment",
-    "type": "package",
+    "type": "library",
     "description": "Environment utilities",
     "license": "MIT",
     "keywords": [
