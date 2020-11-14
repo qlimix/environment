@@ -1,3 +1,8 @@
+## 2.0.1 - 14-11-2020
+
+### Bug fix
+ - Fixed to correct phpunit.xml
+
 ## 2.0.0 - 14-11-2020
 
 ### Compatibility
