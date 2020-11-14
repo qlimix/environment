@@ -4,13 +4,11 @@
     "description": "Environment utilities",
     "license": "MIT",
     "keywords": [
-        "qlimix",
         "environment",
-        "env",
-        "value"
+        "env"
     ],
     "require": {
-        "php": ">=7.2"
+        "php": ">7.4"
     },
     "authors": [
         {
@@ -32,6 +30,6 @@
         "sort-packages": true
     },
     "require-dev": {
-        "qlimix/code-standard": "^1.0"
+        "qlimix/code-standard": "^3.0"
     }
 }
