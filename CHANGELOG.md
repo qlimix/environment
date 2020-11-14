@@ -1,4 +1,4 @@
-## 2.0.0
+## 2.0.0 - 14-11-2020
 
 ### Compatibility
  - changed to PHP >7.4 from >=7.2
